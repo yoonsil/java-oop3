@@ -47,6 +47,9 @@ public class MemberController {
 				
 				break;
 			case "4": //회원탈퇴
+				temp = JOptionPane.showInputDialog("비밀번호입력 하시면 회원탈퇴");
+				member.setPw(temp);
+				JOptionPane.showMessageDialog(null, service.deleteAcc(member));
 				break;
 			case "5": //아이디가능여부
 				String id =JOptionPane.showInputDialog("아이디입력");

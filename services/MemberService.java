@@ -60,6 +60,23 @@ public class MemberService {
 		}
 		return msg;
 	}
+	
+	public String deleteAcc(MemberBean param) {
+		String msg ="다시확인해주세요.";
+		MemberBean[] temp = null;
+		for(int i=0; i<count; i++) {
+		if(param.getPw().equals(this.members[i].getPw())) {
+			temp[i] = this.members[i];
+			this.members = new MemberBean[count-1];
+			for(int j=0; j<count; j++) {
+				this.members[i] = temp[i];
+				msg = "탈퇴완료";
+			}
+			
+			}
+		}
+		return msg;
+	}
 	//관리자-----------------------------------------
 	//1.회원목록
 	public String list() {
